@@ -13,6 +13,12 @@
   color: var(--ba-navy);
 }
 
+/* CF reference wrapper is a layout passthrough so media + card behave as
+   direct children of the block. */
+.flights .flights-cf {
+  display: contents;
+}
+
 /* Hero image */
 .flights .flights-media {
   width: 100%;

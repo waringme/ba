@@ -10,10 +10,8 @@
             "template": {
               "name": "Flights",
               "model": "flights",
-              "endpoint": "https://publish-p147324-e2053365.adobeaemcloud.com/graphql/execute.json/british-airways/GetNewYorkPromotionByPath;path=/content/dam/british-airways/offers/new-york-promotion/new-york-promotion;variation=main",
-              "image": "https://publish-p147324-e2053365.adobeaemcloud.com/content/dam/british-airways/offers/new-york-promotion/new-york-skyline.png",
-              "headline": "New York is calling — fly there in style",
-              "bodyCopy": "The city that never sleeps is closer than you think. Book your return flights to New York and start planning the trip you've been promising yourself."
+              "reference": "/content/dam/british-airways/offers/new-york-promotion/new-york-promotion",
+              "contentFragmentVariation": "main"
             }
           }
         }
@@ -25,30 +23,21 @@
       "id": "flights",
       "fields": [
         {
-          "component": "text",
+          "component": "aem-content-fragment",
+          "name": "reference",
+          "label": "Content Fragment",
           "valueType": "string",
-          "name": "endpoint",
-          "label": "Content Fragment endpoint (GraphQL)",
-          "description": "AEM GraphQL persisted-query URL for the offer. Live values override the fallback fields below."
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Fallback image",
-          "multi": false
+          "required": true,
+          "variationName": "contentFragmentVariation"
         },
         {
           "component": "text",
+          "name": "contentFragmentVariation",
+          "label": "Selected Variation",
+          "value": "",
           "valueType": "string",
-          "name": "headline",
-          "label": "Fallback headline"
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "bodyCopy",
-          "label": "Fallback body copy"
+          "description": "Persisted variation for publish; leave empty for master.",
+          "condition": { "==": [{ "var": "__alwaysFalse" }, true] }
         }
       ]
     }
