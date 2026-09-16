@@ -162,17 +162,16 @@ header nav .nav-brand a:any-link {
   text-decoration: none;
 }
 
-/* Speedmarque-style red accent before a text wordmark (hidden if a logo
-   image is authored instead). */
+/* BA emblem before a text wordmark (hidden if a logo image is authored
+   instead). Swap /icons/ba-mark.svg for the official asset when available. */
 header nav .nav-brand a:not(:has(img))::before {
   content: '';
   display: inline-block;
-  width: 26px;
-  height: 14px;
-  margin-right: 10px;
-  vertical-align: -2px;
-  border-radius: 0 8px;
-  background: linear-gradient(120deg, var(--ba-red) 0 55%, var(--ba-navy) 55% 100%);
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  vertical-align: middle;
+  background: url('/icons/ba-mark.svg') center / contain no-repeat;
 }
 
 header nav .nav-brand img {
