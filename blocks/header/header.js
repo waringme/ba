@@ -124,6 +124,14 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // Drop stray empty top-level sections so brand/sections/tools map by
+  // position even if the authored nav has an accidental empty div.
+  [...nav.children].forEach((child) => {
+    if (!child.textContent.trim() && !child.querySelector('img, picture, svg, .icon')) {
+      child.remove();
+    }
+  });
+
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
