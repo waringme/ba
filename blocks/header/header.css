@@ -297,6 +297,9 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 /* BA nav link colours (placed last so specificity ascends) */
@@ -308,4 +311,39 @@ header nav .nav-sections a:any-link {
 header nav .nav-sections ul > li:hover,
 header nav .nav-sections a:any-link:hover {
   color: var(--ba-red);
+}
+
+/* tools: navy search icon + BA primary action button */
+header nav .nav-tools .icon-search {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background-color: var(--ba-navy);
+  mask-image: url('/icons/search.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+header nav .nav-tools .icon-search img {
+  display: none;
+}
+
+header nav .nav-tools .icon-search:hover {
+  background-color: var(--ba-red);
+}
+
+header nav .nav-tools a.button:any-link {
+  padding: 9px 22px;
+  border: none;
+  border-radius: 6px;
+  background: var(--ba-red);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header nav .nav-tools a.button:any-link:hover {
+  background: #c81b1f;
 }
