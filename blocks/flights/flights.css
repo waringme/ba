@@ -4,12 +4,13 @@
   --ba-red: #eb2226;
 }
 
-/* Full-bleed section that breaks out of the default content width. */
+/* Full-bleed section that breaks out of the default content width.
+   Symmetric negative margins (no width:100vw, which would include the
+   scrollbar and cause horizontal overflow / off-centre layout). */
 .flights.block {
   position: relative;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  width: 100vw;
   color: var(--ba-navy);
 }
 
