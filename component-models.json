@@ -180,6 +180,37 @@
     ]
   },
   {
+    "id": "flights",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "endpoint",
+        "label": "Content Fragment endpoint (GraphQL)",
+        "description": "AEM GraphQL persisted-query URL for the offer. Live values override the fallback fields below."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Fallback image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "headline",
+        "label": "Fallback headline"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "bodyCopy",
+        "label": "Fallback body copy"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
